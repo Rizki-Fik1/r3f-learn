@@ -1,8 +1,9 @@
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
+import { useControls } from "leva";
 
 function AnimatedBox() {
-    const boxRef = useRef();
+    const boxRef = useRef();  
 
     useFrame((state, delta) => {
        boxRef.current.rotation.x += delta;
@@ -13,7 +14,7 @@ function AnimatedBox() {
     return (
       <mesh ref={boxRef}>
           <sphereGeometry args={[1, 60, 60]} />
-          <meshToonMaterial wireframe color="red" />
+          <meshToonMaterial wireframe color={"red"} />
       </mesh>
     )
 }
