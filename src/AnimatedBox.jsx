@@ -1,9 +1,8 @@
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import { useControls } from "leva";
 
 function AnimatedBox() {
-    const boxRef = useRef();  
+    const boxRef = useRef();
 
     useFrame((state, delta) => {
        boxRef.current.rotation.x += delta;
